@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/xp_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_grey_bg"
+        android:padding="12dp">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LEVEL 12 | 1,450 XP"
+            android:textColor="@color/xp_gold"
+            android:textStyle="bold"/>
+            
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progress="70"
+            android:progressTint="@color/xp_gold" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/chart_view"
+        android:layout_below="@id/xp_header"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/surface_grey" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/accent_grey"
+        android:orientation="horizontal"
+        android:gravity="center">
+        
+        <ImageView android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:src="@android:drawable/ic_menu_today" />
+        <ImageView android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:src="@android:drawable/ic_menu_compass" />
+        <ImageView android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:src="@android:drawable/ic_menu_sort_by_size" />
+        <ImageView android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:src="@android:drawable/ic_lock_lock" />
+        <ImageView android:layout_width="0dp" android:layout_weight="1" android:layout_height="30dp" android:src="@android:drawable/ic_menu_preferences" />
+    </LinearLayout>
+
+</RelativeLayout>
