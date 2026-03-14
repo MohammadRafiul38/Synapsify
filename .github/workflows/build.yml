@@ -20,12 +20,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-
-      
-
-      - name: Build with Gradle
-        run: ./gradlew :app:assembleDebug --stacktrace
-         
+          
       - name: Download Wrapper JAR and Set Permissions
         run: |
           # 1. Create the folders if they don't exist
@@ -37,6 +32,9 @@ jobs:
           # 3. Make sure the script is executable
           chmod +x gradlew 
 
+      - name: Build with Gradle
+        run: ./gradlew :app:assembleDebug --stacktrace
+          
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
