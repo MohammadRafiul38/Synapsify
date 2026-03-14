@@ -26,14 +26,17 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew :app:assembleDebug --stacktrace
          
-      - name: Download Wrapper and Grant Permission
+      - name: Download Wrapper JAR and Set Permissions
         run: |
+          # 1. Create the folders if they don't exist
           mkdir -p gradle/wrapper
-          if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
-            curl -L -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.2.0/gradle/wrapper/gradle-wrapper.jar
-          fi
-          chmod +x gradlew 
           
+          # 2. Download the binary JAR file from the official Gradle source
+          curl -L -o gradle/wrapper/gradle-wrapper.jar https://github.com/gradle/gradle/raw/v8.2.0/gradle/wrapper/gradle-wrapper.jar
+          
+          # 3. Make sure the script is executable
+          chmod +x gradlew 
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
